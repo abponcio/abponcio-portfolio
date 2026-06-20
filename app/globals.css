@@ -394,11 +394,28 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
-/* ─── Hero mobile tweaks ───────────────────────────────────── */
+/* ─── Hero eyebrow scroll wrapper ──────────────────────────── */
+.hero-eyebrow-wrap {
+  position: relative;
+}
+
 @media (max-width: 768px) {
-  .hero-eyebrow {
-    letter-spacing: 0.1em !important;
-    font-size: 11px !important;
+  .hero-eyebrow-wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .hero-eyebrow-wrap::-webkit-scrollbar {
+    display: none;
+  }
+  .hero-eyebrow-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    background: linear-gradient(to right, transparent, var(--bg));
+    pointer-events: none;
   }
 }
 

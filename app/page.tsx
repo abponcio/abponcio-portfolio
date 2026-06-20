@@ -122,28 +122,31 @@ export default function Home() {
                 marginTop: "auto",
               }}
             >
-              <span
-                className="hero-eyebrow inline-flex items-center font-display font-bold uppercase text-muted"
-                style={{
-                  gap: 10,
-                  fontSize: "clamp(12px, 1.3vw, 15px)",
-                  letterSpacing: "0.22em",
-                }}
-              >
+              <div className="hero-eyebrow-wrap">
                 <span
-                  className="shrink-0"
+                  className="hero-eyebrow inline-flex items-center font-display font-bold uppercase text-muted"
                   style={{
-                    width: 24,
-                    height: 1.5,
-                    background: "var(--accent)",
+                    gap: 10,
+                    fontSize: "clamp(12px, 1.3vw, 15px)",
+                    letterSpacing: "0.22em",
+                    whiteSpace: "nowrap",
                   }}
-                  aria-hidden="true"
-                />
-                {siteCopy.hero.roleEyebrow.before}{" "}
-                <span style={{ color: "var(--accent)" }}>
-                  {siteCopy.hero.roleEyebrow.accent}
+                >
+                  <span
+                    className="shrink-0"
+                    style={{
+                      width: 24,
+                      height: 1.5,
+                      background: "var(--accent)",
+                    }}
+                    aria-hidden="true"
+                  />
+                  {siteCopy.hero.roleEyebrow.before}{" "}
+                  <span style={{ color: "var(--accent)" }}>
+                    {siteCopy.hero.roleEyebrow.accent}
+                  </span>
                 </span>
-              </span>
+              </div>
 
               <h1
                 className="font-display font-semibold uppercase"
