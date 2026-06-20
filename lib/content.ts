@@ -5,7 +5,7 @@ export const siteCopy = {
       accent: "· Hello Chef",
     },
     tagline:
-      "I help people do their best work, make the complicated stuff simple, and help good businesses",
+      "I help people do their best, simplify the hard stuff, and help good businesses",
     taglineAccent: "grow.",
   },
   work: {
@@ -202,19 +202,19 @@ export const caseStudyDetails: CaseStudyDetail[] = [
   {
     num: "02",
     title: "Questions, Answered",
-    tag: "Data platform · Enablement",
+    tag: "Data platform · One source of truth",
     summary:
-      "Turned data from a request queue into a self-serve layer the whole company could actually use.",
+      "Every field documented. Every model validated. AI-powered charts that won't hallucinate. We went from 'ask engineering' to 'answer it yourself.'",
     problem:
-      "Every metric meant a ticket to the data team. Decisions waited days, and a small team quietly became the bottleneck for the entire business.",
+      "Every metric meant a ticket to the data team. Decisions waited days, and a small team quietly became the bottleneck for the entire business. Worse, when the data team shrank, the company nearly went blind.",
     build:
-      "I built modeled, trustworthy datasets with dbt and a self-serve BI layer on top, with documentation and guardrails so anyone could answer their own questions confidently.",
+      "I built the entire data layer with dbt: every field documented, every model validated, every number traceable to a source. On top of that, I wired in AI-powered chart and dashboard building so anyone can explore data through conversation, not just SQL. The guardrails are baked in so it doesn't hallucinate. What comes out is trustworthy. It became the company's one source of truth: revenue, marketing performance, finance, operations, customer data — all of it clean, all of it consistent.",
     impact: [
-      { stat: "Company", label: "wide self-serve" },
-      { stat: "Days → min", label: "time to an answer" },
-      { stat: "Freed", label: "the data team to go deep" },
+      { stat: "1 source", label: "of truth across the business" },
+      { stat: "Days → min", label: "time to any answer" },
+      { stat: "AI charts", label: "validated, zero hallucinations" },
     ],
-    tags: ["dbt", "Data modeling", "BI", "Enablement"],
+    tags: ["dbt", "Data modeling", "AI analytics", "Self-serve BI"],
   },
   {
     num: "03",

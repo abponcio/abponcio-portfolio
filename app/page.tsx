@@ -162,7 +162,7 @@ export default function Home() {
                 style={{
                   fontSize: "clamp(18px, 2vw, 27px)",
                   lineHeight: 1.32,
-                  maxWidth: "20ch",
+                  maxWidth: "28ch",
                   fontWeight: 500,
                   color: "var(--text)",
                 }}
