@@ -103,20 +103,8 @@ export default function Home() {
     if (isTouchDevice) return;
 
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+    let rafId: number | null = null;
 
-    const onMove = (e: MouseEvent) => {
-      const rect = hero.getBoundingClientRect();
-      mouseTarget.current = {
-        x: (e.clientX - rect.left) / rect.width - 0.5,
-        y: (e.clientY - rect.top) / rect.height - 0.5,
-      };
-    };
-    const onLeave = () => { mouseTarget.current = { x: 0, y: 0 }; };
-
-    hero.addEventListener("mousemove", onMove);
-    hero.addEventListener("mouseleave", onLeave);
-
-    let rafId: number;
     const tick = () => {
       const cur = mouseCurrent.current;
       const tgt = mouseTarget.current;
@@ -130,14 +118,37 @@ export default function Home() {
         heroContentRef.current.style.transform = `translate(${-cur.x * 8}px, ${-cur.y * 5}px)`;
       }
 
-      rafId = requestAnimationFrame(tick);
+      const settled =
+        Math.abs(cur.x - tgt.x) < 0.0002 &&
+        Math.abs(cur.y - tgt.y) < 0.0002;
+
+      rafId = settled ? null : requestAnimationFrame(tick);
     };
-    rafId = requestAnimationFrame(tick);
+
+    const startTick = () => {
+      if (rafId === null) rafId = requestAnimationFrame(tick);
+    };
+
+    const onMove = (e: MouseEvent) => {
+      const rect = hero.getBoundingClientRect();
+      mouseTarget.current = {
+        x: (e.clientX - rect.left) / rect.width - 0.5,
+        y: (e.clientY - rect.top) / rect.height - 0.5,
+      };
+      startTick();
+    };
+    const onLeave = () => {
+      mouseTarget.current = { x: 0, y: 0 };
+      startTick();
+    };
+
+    hero.addEventListener("mousemove", onMove);
+    hero.addEventListener("mouseleave", onLeave);
 
     return () => {
       hero.removeEventListener("mousemove", onMove);
       hero.removeEventListener("mouseleave", onLeave);
-      cancelAnimationFrame(rafId);
+      if (rafId !== null) cancelAnimationFrame(rafId);
     };
   }, []);
 
