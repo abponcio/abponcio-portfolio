@@ -48,11 +48,18 @@ export function LifeIcon({ name }: { name: LifeIconName }) {
     case "tennis":
       return (
         <svg {...props}>
-          <circle cx="12" cy="12" r="9" />
-          <path d="M3 12c3-3 3-6 0-9" />
-          <path d="M21 12c-3 3-3 6 0 9" />
-          <path d="M3 12c3 3 3 6 0 9" />
-          <path d="M21 12c-3-3-3-6 0-9" />
+          {/* Racket head */}
+          <ellipse cx="12" cy="8" rx="5" ry="6" />
+          {/* Vertical strings */}
+          <line x1="9.5" y1="3" x2="9.5" y2="13" />
+          <line x1="12" y1="2.5" x2="12" y2="13.5" />
+          <line x1="14.5" y1="3" x2="14.5" y2="13" />
+          {/* Horizontal strings */}
+          <line x1="7.5" y1="5.5" x2="16.5" y2="5.5" />
+          <line x1="7" y1="8" x2="17" y2="8" />
+          <line x1="7.5" y1="10.5" x2="16.5" y2="10.5" />
+          {/* Handle */}
+          <line x1="12" y1="14" x2="12" y2="21.5" />
         </svg>
       );
   }

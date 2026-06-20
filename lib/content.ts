@@ -133,7 +133,7 @@ export const beyondTheJob = [
     icon: "tennis" as const,
     label: "Tennis",
     detail:
-      "My wife and I play together — it's part of our routine, our exercise, and honestly part of how we travel. If there's a court, we'll find it.",
+      "My wife and I play together. It's part of our routine, our exercise, and honestly part of how we travel. If there's a court, we'll find it.",
   },
 ];
 
