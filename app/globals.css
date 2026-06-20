@@ -123,6 +123,37 @@ h1, h2, h3 {
   opacity: 1;
 }
 
+@media (max-width: 640px) {
+  .floatnav-pill {
+    max-width: calc(100vw - 32px);
+    overflow: hidden;
+    position: relative;
+  }
+  .floatnav[data-open="true"] .fn-links {
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+  .floatnav[data-open="true"] .fn-links::-webkit-scrollbar {
+    display: none;
+  }
+  /* gradient fade between links and hamburger */
+  .floatnav[data-open="true"] .floatnav-pill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* hamburger 40px + gap 5px + padding 6px ≈ 51px from right */
+    right: 51px;
+    width: 44px;
+    background: linear-gradient(to right, transparent, color-mix(in srgb, var(--bg) 92%, transparent));
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
 .fn-links-inner {
   display: flex;
   align-items: center;

@@ -134,7 +134,6 @@ export const beyondTheJob = [
 export const builds = [
   "Web Apps",
   "Mobile Apps",
-  "Backend Development",
   "DBT Models",
   "ML Training",
   "DevOps & IaC",
