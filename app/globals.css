@@ -312,7 +312,7 @@ h1, h2, h3 {
   }
 
   .work-item-result {
-    grid-column: 1 / -1;
+    grid-column: 1;
     grid-row: 3;
     text-align: left !important;
     max-width: none !important;
