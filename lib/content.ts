@@ -2,7 +2,7 @@ export const siteCopy = {
   hero: {
     roleEyebrow: {
       before: "Product Engineering Manager",
-      accent: "· Hello Chef",
+      accent: "@ Hello Chef",
     },
     tagline:
       "I help people do their best, simplify the hard stuff, and help good businesses",
