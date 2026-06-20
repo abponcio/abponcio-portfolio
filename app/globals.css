@@ -390,6 +390,8 @@ h1, h2, h3 {
 /* ─── Hero portrait — desktop ──────────────────────────────── */
 .hero-img-wrap {
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 /* ─── Hero portrait — mobile ───────────────────────────────── */

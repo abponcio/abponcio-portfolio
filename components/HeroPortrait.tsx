@@ -1,9 +1,10 @@
 export function HeroPortrait() {
   return (
     <div
-      className="hero-portrait hero-img-wrap"
+      className="hero-portrait"
       style={{
-        minWidth: 0,
+        width: "100%",
+        height: "100%",
         position: "relative",
         overflow: "hidden",
         display: "flex",

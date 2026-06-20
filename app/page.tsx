@@ -179,7 +179,7 @@ export default function Home() {
 
           <div
             ref={rightPanelRef}
-            className="min-w-0 relative overflow-hidden max-md:min-h-[42vh]"
+            className="hero-img-wrap min-w-0"
             style={{ background: "var(--bg)" }}
           >
             <HeroPortrait />
