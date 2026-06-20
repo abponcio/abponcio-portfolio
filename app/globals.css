@@ -394,6 +394,14 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
+/* ─── Hero mobile tweaks ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-eyebrow {
+    letter-spacing: 0.1em !important;
+    font-size: 11px !important;
+  }
+}
+
 /* ─── Hero portrait — mobile ───────────────────────────────── */
 @media (max-width: 768px) {
   .hero-grid {
