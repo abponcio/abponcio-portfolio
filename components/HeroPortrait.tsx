@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export function HeroPortrait() {
   return (
     <div
@@ -39,14 +37,10 @@ export function HeroPortrait() {
         }}
       />
 
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src="/images/anthony-hero.png"
         alt="Anthony Bryle Poncio"
-        width={1024}
-        height={1536}
-        priority
-        unoptimized
-        sizes="(max-width: 768px) 100vw, 45vw"
         style={{
           position: "absolute",
           inset: 0,
