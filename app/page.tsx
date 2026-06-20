@@ -215,7 +215,7 @@ export default function Home() {
                 style={{ background: "transparent", cursor: "pointer", color: "var(--text)" }}
               >
                 <span
-                  className="font-display font-bold text-accent min-w-[2ch]"
+                  className="work-item-num font-display font-bold text-accent min-w-[2ch]"
                   style={{
                     fontSize: "clamp(13px, 1.3vw, 15px)",
                     fontVariantNumeric: "tabular-nums",
@@ -224,7 +224,7 @@ export default function Home() {
                   {item.num}
                 </span>
                 <span
-                  className="font-display font-bold"
+                  className="work-item-title font-display font-bold"
                   style={{
                     fontSize: "clamp(24px, 4.2vw, 58px)",
                     lineHeight: 1,
