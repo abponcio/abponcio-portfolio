@@ -497,7 +497,7 @@ export default function Home() {
             </div>
             <div className="tag-row">
               <span className="tag-row-label">{siteCopy.life.stackLabel}</span>
-              <div className="flex gap-2.5 overflow-x-auto">
+              <div className="flex flex-wrap gap-2.5">
                 {stack.map((s) => (
                   <span key={s} className="tag-pill">
                     {s}
