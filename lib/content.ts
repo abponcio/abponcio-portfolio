@@ -5,7 +5,7 @@ export const siteCopy = {
       accent: "@ Hello Chef",
     },
     tagline:
-      "I help people do their best, simplify the hard stuff, and help good businesses",
+      "I help people do their best, simplify the hard stuff, and empower businesses to",
     taglineAccent: "grow.",
   },
   work: {

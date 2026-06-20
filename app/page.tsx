@@ -25,6 +25,9 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const rightPanelRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const mouseTarget = useRef({ x: 0, y: 0 });
+  const mouseCurrent = useRef({ x: 0, y: 0 });
   const [openWork, setOpenWork] = useState<number | null>(null);
   const active: CaseStudyDetail | null = openWork !== null ? caseStudyDetails[openWork] : null;
 
@@ -68,7 +71,6 @@ export default function Home() {
         { trigger: ".philosophy-section", sel: ".philosophy-item", x: -12, start: "top 80%" },
         { trigger: ".about-section", sel: ".timeline-item", y: 16, start: "top 80%" },
         { trigger: ".beyond-section", sel: ".life-card", y: 12 },
-        { trigger: ".testimonials-section", sel: ".testimonial-item", y: 16 },
       ];
 
       sections.forEach(({ trigger, sel, start = "top 85%", ...vars }) => {
@@ -93,6 +95,52 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchDevice) return;
+
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+    const onMove = (e: MouseEvent) => {
+      const rect = hero.getBoundingClientRect();
+      mouseTarget.current = {
+        x: (e.clientX - rect.left) / rect.width - 0.5,
+        y: (e.clientY - rect.top) / rect.height - 0.5,
+      };
+    };
+    const onLeave = () => { mouseTarget.current = { x: 0, y: 0 }; };
+
+    hero.addEventListener("mousemove", onMove);
+    hero.addEventListener("mouseleave", onLeave);
+
+    let rafId: number;
+    const tick = () => {
+      const cur = mouseCurrent.current;
+      const tgt = mouseTarget.current;
+      cur.x = lerp(cur.x, tgt.x, 0.07);
+      cur.y = lerp(cur.y, tgt.y, 0.07);
+
+      if (rightPanelRef.current) {
+        rightPanelRef.current.style.transform = `translate(${cur.x * 22}px, ${cur.y * 12}px)`;
+      }
+      if (heroContentRef.current) {
+        heroContentRef.current.style.transform = `translate(${-cur.x * 8}px, ${-cur.y * 5}px)`;
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      hero.removeEventListener("mousemove", onMove);
+      hero.removeEventListener("mouseleave", onLeave);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
   return (
     <>
       <Nav />
@@ -100,6 +148,7 @@ export default function Home() {
       <main>
         {/* ── Hero ──────────────────────────────────────────── */}
         <header
+          ref={heroRef}
           id="top"
           className="hero-grid grid min-h-screen border-b"
           style={{
