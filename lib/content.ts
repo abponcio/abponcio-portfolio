@@ -22,7 +22,7 @@ export const siteCopy = {
   about: {
     eyebrow: "The Long Game",
     headline: {
-      before: "From Cavite to",
+      before: "From Manila to",
       accent: "Dubai.",
     },
     bio: "Twelve years of building things that last. I started as a web dev intern in the Philippines, and these days I lead product engineering across continents. I still stay close to the work: solving hard problems, debugging systems, and shipping features that matter.",
@@ -128,6 +128,12 @@ export const beyondTheJob = [
     label: "Plants",
     detail:
       "Repotting and selling them on the side. My first real instinct to grow something from scratch and ship it.",
+  },
+  {
+    icon: "tennis" as const,
+    label: "Tennis",
+    detail:
+      "My wife and I play together — it's part of our routine, our exercise, and honestly part of how we travel. If there's a court, we'll find it.",
   },
 ];
 

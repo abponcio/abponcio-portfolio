@@ -1,4 +1,4 @@
-type LifeIconName = "honey" | "travel" | "food" | "plants";
+type LifeIconName = "honey" | "travel" | "food" | "plants" | "tennis";
 
 export function LifeIcon({ name }: { name: LifeIconName }) {
   const props = {
@@ -43,6 +43,16 @@ export function LifeIcon({ name }: { name: LifeIconName }) {
           <path d="M12 21v-8" />
           <path d="M12 13c0-4 3-7 8-7 0 4-3 7-8 7z" />
           <path d="M12 15c0-3-2.5-5.5-7-5.5 0 3 2.5 5.5 7 5.5z" />
+        </svg>
+      );
+    case "tennis":
+      return (
+        <svg {...props}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12c3-3 3-6 0-9" />
+          <path d="M21 12c-3 3-3 6 0 9" />
+          <path d="M3 12c3 3 3 6 0 9" />
+          <path d="M21 12c-3-3-3-6 0-9" />
         </svg>
       );
   }

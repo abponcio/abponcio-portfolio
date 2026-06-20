@@ -171,14 +171,15 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  background: transparent;
-  border: none;
+  background: var(--card);
+  border: 1px solid var(--line);
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 50%;
+  transition: border-color 0.2s ease;
 }
 
 .floatnav-hamburger:hover {
-  background: var(--card);
+  border-color: var(--text);
 }
 
 .fn-bar {
