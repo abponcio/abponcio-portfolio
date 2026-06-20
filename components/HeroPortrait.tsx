@@ -45,6 +45,7 @@ export function HeroPortrait() {
         width={1024}
         height={1536}
         priority
+        unoptimized
         sizes="(max-width: 768px) 100vw, 45vw"
         style={{
           position: "absolute",
