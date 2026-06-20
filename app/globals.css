@@ -387,6 +387,34 @@ h1, h2, h3 {
   color: var(--accent);
 }
 
+/* ─── Hero portrait — desktop ──────────────────────────────── */
+.hero-img-wrap {
+  height: 100vh;
+}
+
+/* ─── Hero portrait — mobile ───────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .hero-img-wrap {
+    height: 72vw;
+    max-height: 420px;
+    min-height: 260px;
+    order: -1;
+  }
+  .hero-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%) !important;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%) !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

@@ -101,7 +101,7 @@ export default function Home() {
         {/* ── Hero ──────────────────────────────────────────── */}
         <header
           id="top"
-          className="grid min-h-screen border-b"
+          className="hero-grid grid min-h-screen border-b"
           style={{
             gridTemplateColumns: "minmax(0, 55fr) minmax(0, 45fr)",
             borderColor: "var(--line)",

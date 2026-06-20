@@ -1,54 +1,60 @@
 export function HeroPortrait() {
   return (
     <div
-      className="hero-portrait relative w-full min-h-[60vh] md:h-screen overflow-hidden"
-      style={{ background: "var(--bg)" }}
+      className="hero-portrait hero-img-wrap"
+      style={{
+        minWidth: 0,
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "flex-end",
+        justifyContent: "center",
+        background: "var(--bg)",
+      }}
     >
       {/* Amber glow */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none"
         aria-hidden="true"
         style={{
+          position: "absolute",
+          inset: 0,
           background:
             "radial-gradient(58% 52% at 54% 40%, rgba(240,165,0,0.18), rgba(240,165,0,0) 68%)",
-          zIndex: 1,
         }}
       />
 
-      {/* Left blend into hero column */}
+      {/* Left blend — desktop only */}
       <div
-        className="pointer-events-none absolute left-0 top-0 bottom-0 hidden md:block"
+        className="pointer-events-none hidden md:block"
         aria-hidden="true"
         style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          bottom: 0,
           width: 120,
           background: "linear-gradient(to right, var(--bg), transparent)",
-          zIndex: 3,
-        }}
-      />
-
-      {/* Bottom fade */}
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0"
-        aria-hidden="true"
-        style={{
-          height: "28%",
-          background: "linear-gradient(to bottom, transparent, var(--bg))",
-          zIndex: 3,
         }}
       />
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
+        className="hero-img"
         src="/images/anthony-hero.png"
         alt="Anthony Bryle Poncio"
         style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
+          position: "relative",
           height: "100%",
+          maxHeight: "100vh",
+          width: "auto",
+          maxWidth: "none",
           objectFit: "contain",
-          objectPosition: "bottom center",
-          zIndex: 2,
+          objectPosition: "bottom",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, #000 0%, #000 76%, transparent 99%)",
+          maskImage:
+            "linear-gradient(to bottom, #000 0%, #000 76%, transparent 99%)",
           filter: "drop-shadow(0 26px 50px rgba(0,0,0,0.4))",
         }}
       />
