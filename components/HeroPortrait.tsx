@@ -3,10 +3,10 @@ import Image from "next/image";
 export function HeroPortrait() {
   return (
     <div
-      className="hero-portrait relative w-full h-full min-h-[60vh] md:min-h-0 overflow-hidden"
+      className="hero-portrait relative w-full min-h-[60vh] md:h-screen overflow-hidden"
       style={{ background: "var(--bg)" }}
     >
-      {/* Amber glow behind portrait */}
+      {/* Amber glow */}
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden="true"
@@ -17,7 +17,7 @@ export function HeroPortrait() {
         }}
       />
 
-      {/* Seamless blend into left column */}
+      {/* Left blend into hero column */}
       <div
         className="pointer-events-none absolute left-0 top-0 bottom-0 hidden md:block"
         aria-hidden="true"
@@ -42,10 +42,15 @@ export function HeroPortrait() {
       <Image
         src="/images/anthony-hero.png"
         alt="Anthony Bryle Poncio"
-        fill
+        width={1024}
+        height={1536}
         priority
         sizes="(max-width: 768px) 100vw, 45vw"
         style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
           objectFit: "contain",
           objectPosition: "bottom center",
           zIndex: 2,
