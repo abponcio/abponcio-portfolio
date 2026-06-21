@@ -598,7 +598,7 @@ export default function Home() {
             </div>
 
             {/* Tennis — wide top-right */}
-            <div className="bento-tile" style={{ gridColumn: "3/5", gridRow: "1/2", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,34px)", display: "flex", alignItems: "flex-start", gap: 18 }}>
+            <div className="bento-tile bento-tile-side" style={{ gridColumn: "3/5", gridRow: "1/2", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,34px)", display: "flex", alignItems: "flex-start", gap: 18 }}>
               <span style={{ color: "var(--accent)", flex: "none", marginTop: 2 }}>
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <ellipse cx="12" cy="8" rx="5" ry="6" />
@@ -645,7 +645,7 @@ export default function Home() {
             </div>
 
             {/* Plants — full-width bottom */}
-            <div className="bento-tile" style={{ gridColumn: "1/5", gridRow: "3/4", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,36px)", display: "flex", alignItems: "center", gap: "clamp(18px,2.4vw,30px)" }}>
+            <div className="bento-tile bento-tile-side" style={{ gridColumn: "1/5", gridRow: "3/4", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,36px)", display: "flex", alignItems: "center", gap: "clamp(18px,2.4vw,30px)" }}>
               <span style={{ display: "inline-flex", width: 50, height: 50, flex: "none", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "color-mix(in srgb,var(--muted) 12%,transparent)", color: "var(--muted)" }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13c0-4 3-7 8-7 0 4-3 7-8 7z"/><path d="M12 15c0-3-2.5-5.5-7-5.5 0 3 2.5 5.5 7 5.5z"/></svg>
               </span>

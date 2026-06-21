@@ -466,6 +466,10 @@ h1, h2, h3 {
     grid-row: auto !important;
     min-height: 150px !important;
   }
+  .bento-tile-side {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
 }
 
 /* ─── Hero portrait — desktop ──────────────────────────────── */
