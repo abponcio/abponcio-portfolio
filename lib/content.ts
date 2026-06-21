@@ -243,17 +243,17 @@ export const caseStudyDetails: CaseStudyDetail[] = [
     title: "Built Lean",
     tag: "Leadership · Culture",
     summary:
-      "A small, autonomous team that ships outsized impact, on purpose.",
+      "A small, autonomous team that ships outsized impact, on purpose. AI is part of how we work now, and we use it with intention.",
     problem:
       "Scale usually means more people and more process. We wanted the opposite: stay small, move fast, and own outcomes end to end.",
     build:
-      "I built a culture of ownership: tight feedback loops, high trust, and engineers who stay close to the problem. We hire for curiosity and autonomy over raw headcount.",
+      "I built a culture of ownership: tight feedback loops, high trust, and engineers who stay close to the problem. We hire for curiosity and autonomy over raw headcount. Part of how we stayed lean was genuinely adopting AI into how we work. We orchestrate it into our execution and it has sped things up significantly. But we do not push it blindly. Using AI well is a responsibility. We are intentional about where it helps, where it does not, and what we still own ourselves.",
     impact: [
       { stat: "Small", label: "by design" },
       { stat: "Autonomous", label: "owns outcomes" },
       { stat: "Impactful", label: "punches above its size" },
     ],
-    tags: ["Leadership", "Culture", "Hiring", "Autonomy"],
+    tags: ["Leadership", "Culture", "Hiring", "Autonomy", "AI Workflows"],
   },
 ];
 
