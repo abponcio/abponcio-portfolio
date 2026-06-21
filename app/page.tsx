@@ -592,7 +592,7 @@ export default function Home() {
                   <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase" as const, color: "var(--accent)", border: "1px solid color-mix(in srgb,var(--accent) 40%,transparent)", borderRadius: 99, padding: "4px 10px" }}>On the road now</span>
                 </span>
                 <p style={{ fontSize: "clamp(15px,1.5vw,17px)", lineHeight: 1.55, color: "var(--muted)", fontWeight: 500, maxWidth: "36ch" }}>
-                  Chasing the seven wonders of the world together. Dubai makes a pretty good base camp — if there&apos;s a new corner of the map, we&apos;re already booking it.
+                  Chasing the seven wonders of the world together. Dubai makes a pretty good base camp. If there&apos;s a new corner of the map, we&apos;re already booking it.
                 </p>
               </div>
             </div>
@@ -655,7 +655,7 @@ export default function Home() {
                   <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase" as const, color: "var(--muted)", border: "1px solid var(--line)", borderRadius: 99, padding: "3px 9px" }}>Back in PH</span>
                 </span>
                 <p style={{ fontSize: "clamp(14px,1.4vw,15.5px)", lineHeight: 1.5, color: "var(--muted)", fontWeight: 500, maxWidth: "62ch" }}>
-                  Repotting and reselling them on the side, back in the Philippines — my first real instinct to grow something from scratch and ship it. One of those sleepless-night experiments worth every minute.
+                  Repotting and reselling them on the side, back in the Philippines. My first real instinct to grow something from scratch and ship it. One of those sleepless-night experiments worth every minute.
                 </p>
               </div>
             </div>
