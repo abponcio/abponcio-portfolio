@@ -517,7 +517,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center" style={{ gap: 14 }}>
               <span
                 className="font-display font-bold uppercase text-muted"
-                style={{ fontSize: 13, letterSpacing: "0.22em", width: 120, flex: "none" }}
+                style={{ fontSize: 13, letterSpacing: "0.22em", flex: "none", whiteSpace: "nowrap" }}
               >
                 {siteCopy.life.stackLabel}
               </span>
