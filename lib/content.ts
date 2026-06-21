@@ -152,6 +152,7 @@ export const stack = [
   "React Native",
   "Kubernetes",
   "Next.js",
+  "Nuxt.js",
   "TypeScript",
 ];
 
