@@ -521,9 +521,9 @@ export default function Home() {
               >
                 {siteCopy.life.stackLabel}
               </span>
-              <div className="flex" style={{ gap: 10, overflowX: "auto", scrollbarWidth: "none" }}>
+              <div className="flex flex-wrap" style={{ gap: 10 }}>
                 {stack.map((s) => (
-                  <span key={s} className="tag-pill" style={{ flexShrink: 0 }}>{s}</span>
+                  <span key={s} className="tag-pill">{s}</span>
                 ))}
               </div>
             </div>
