@@ -34,8 +34,8 @@ export const siteCopy = {
     },
     subtitle:
       "The instinct to ship something from scratch started long before the code.",
-    buildsLabel: "Things I build",
-    stackLabel: "Some tools I use",
+    buildsLabel: "What I build",
+    stackLabel: "Stack I trust",
   },
   contact: {
     headline: {

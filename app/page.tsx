@@ -7,13 +7,11 @@ import { Nav } from "@/components/Nav";
 import { InfoBar } from "@/components/InfoBar";
 import { HeroPortrait } from "@/components/HeroPortrait";
 import { Testimonials } from "@/components/Testimonials";
-import { LifeIcon } from "@/components/LifeIcon";
 import {
   siteCopy,
   caseStudies,
   caseStudyDetails,
   principles,
-  beyondTheJob,
   timeline,
   builds,
   stack,
@@ -312,6 +310,16 @@ export default function Home() {
                 </span>
               </button>
             ))}
+            <div style={{ padding: "clamp(24px,3vw,36px) clamp(8px,1.5vw,20px) 0" }}>
+              <a
+                href={siteCopy.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-ghost"
+              >
+                Learn more on LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -470,10 +478,69 @@ export default function Home() {
                 </div>
               </div>
             ))}
+            <div style={{ paddingTop: "clamp(24px,3vw,36px)" }}>
+              <a
+                href={siteCopy.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-ghost"
+              >
+                Learn more on LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
 
-        {/* ── Life outside + stack ────────────────────────── */}
+        {/* ── Stack ─────────────────────────────────────────── */}
+        <section
+          className="flex flex-col border-t"
+          style={{
+            padding: "clamp(56px, 9vw, 148px) clamp(20px, 5vw, 72px)",
+            gap: "clamp(28px, 3.4vw, 48px)",
+            borderColor: "var(--line)",
+          }}
+        >
+          <div className="flex flex-col" style={{ gap: "clamp(20px, 2.4vw, 28px)" }}>
+            <div className="flex flex-wrap items-center" style={{ gap: 14 }}>
+              <span
+                className="font-display font-bold uppercase text-muted"
+                style={{ fontSize: 13, letterSpacing: "0.22em", width: 120, flex: "none" }}
+              >
+                {siteCopy.life.buildsLabel}
+              </span>
+              <div className="flex flex-wrap" style={{ gap: 10 }}>
+                {builds.map((b) => (
+                  <span key={b} className="tag-pill tag-pill-filled">{b}</span>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center" style={{ gap: 14 }}>
+              <span
+                className="font-display font-bold uppercase text-muted"
+                style={{ fontSize: 13, letterSpacing: "0.22em", width: 120, flex: "none" }}
+              >
+                {siteCopy.life.stackLabel}
+              </span>
+              <div className="flex flex-wrap" style={{ gap: 10 }}>
+                {stack.map((s) => (
+                  <span key={s} className="tag-pill">{s}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div>
+            <a
+              href={siteCopy.contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-ghost"
+            >
+              Learn more on LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
+        {/* ── Life outside the build ────────────────────────── */}
         <section
           id="beyond"
           className="beyond-section flex flex-col border-t"
@@ -509,60 +576,78 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="life-grid">
-            {beyondTheJob.map((item) => (
-              <div key={item.label} className="life-card">
-                <span className="text-accent">
-                  <LifeIcon name={item.icon} />
+          {/* Bento grid */}
+          <div
+            className="bento-grid"
+            style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridTemplateRows: "repeat(2, minmax(168px, 1fr)) minmax(150px, auto)", gap: "clamp(12px, 1.4vw, 18px)" }}
+          >
+            {/* Travel — large 2×2 */}
+            <div className="bento-tile" style={{ gridColumn: "1/3", gridRow: "1/3", background: "var(--card)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(28px,3vw,44px)", display: "flex", flexDirection: "column", gap: 18 }}>
+              <span style={{ display: "inline-flex", width: 54, height: 54, flex: "none", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "color-mix(in srgb,var(--accent) 16%,transparent)", color: "var(--accent)" }}>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3.5 14.5l17-6.2c.9-.3 1.6.7 1 1.4L12 20l-1.6-4.4L3.5 14.5z"/><path d="M10.4 15.6l3.2-3.2"/></svg>
+              </span>
+              <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 12 }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 10, flexWrap: "wrap", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px,2.8vw,38px)", letterSpacing: "-.025em" }}>
+                  Travel{" "}
+                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase" as const, color: "var(--accent)", border: "1px solid color-mix(in srgb,var(--accent) 40%,transparent)", borderRadius: 99, padding: "4px 10px" }}>On the road now</span>
                 </span>
-                <span
-                  className="font-display font-bold"
-                  style={{
-                    fontSize: "clamp(19px, 1.9vw, 24px)",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {item.label}
-                </span>
-                <p
-                  style={{
-                    fontSize: "clamp(14px, 1.4vw, 15.5px)",
-                    lineHeight: 1.5,
-                    color: "var(--muted)",
-                    fontWeight: 500,
-                  }}
-                >
-                  {item.detail}
+                <p style={{ fontSize: "clamp(15px,1.5vw,17px)", lineHeight: 1.55, color: "var(--muted)", fontWeight: 500, maxWidth: "36ch" }}>
+                  Chasing the seven wonders of the world together. Dubai makes a pretty good base camp — if there&apos;s a new corner of the map, we&apos;re already booking it.
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div
-            className="flex flex-col border-t pt-[clamp(8px,2vw,20px)]"
-            style={{
-              gap: "clamp(20px, 2.4vw, 28px)",
-              borderColor: "var(--line)",
-            }}
-          >
-            <div className="tag-row">
-              <span className="tag-row-label">{siteCopy.life.buildsLabel}</span>
-              <div className="flex flex-wrap gap-2.5">
-                {builds.map((b) => (
-                  <span key={b} className="tag-pill tag-pill-filled">
-                    {b}
-                  </span>
-                ))}
+            {/* Tennis — wide top-right */}
+            <div className="bento-tile" style={{ gridColumn: "3/5", gridRow: "1/2", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,34px)", display: "flex", alignItems: "flex-start", gap: 18 }}>
+              <span style={{ color: "var(--accent)", flex: "none", marginTop: 2 }}>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6"/><line x1="9.5" y1="3.5" x2="9.5" y2="15.5"/><line x1="3.5" y1="9.5" x2="15.5" y2="9.5"/><line x1="5.4" y1="5.4" x2="13.6" y2="13.6"/><line x1="13.6" y1="5.4" x2="5.4" y2="13.6"/><line x1="14" y1="14" x2="21" y2="21"/></svg>
+              </span>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(19px,1.9vw,24px)", letterSpacing: "-.01em" }}>Tennis</span>
+                <p style={{ fontSize: "clamp(14px,1.4vw,15.5px)", lineHeight: 1.5, color: "var(--muted)", fontWeight: 500, maxWidth: "42ch" }}>
+                  My wife and I play together. It&apos;s part of our routine, our exercise, and honestly part of how we travel. If there&apos;s a court, we&apos;ll find it.
+                </p>
               </div>
             </div>
-            <div className="tag-row">
-              <span className="tag-row-label">{siteCopy.life.stackLabel}</span>
-              <div className="flex flex-wrap gap-2.5">
-                {stack.map((s) => (
-                  <span key={s} className="tag-pill">
-                    {s}
-                  </span>
-                ))}
+
+            {/* Food */}
+            <div className="bento-tile" style={{ gridColumn: "3/4", gridRow: "2/3", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,32px)", display: "flex", flexDirection: "column", gap: 12 }}>
+              <span style={{ color: "var(--accent)" }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3.5 11h17a8.5 8.5 0 0 1-8.5 8 8.5 8.5 0 0 1-8.5-8z"/><path d="M12 11V7"/><path d="M12 5.2c1.1 0 1.1-1.7 0-1.7"/><path d="M19 21H5"/></svg>
+              </span>
+              <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(18px,1.8vw,22px)", letterSpacing: "-.01em", marginTop: "auto" }}>Food</span>
+              <p style={{ fontSize: "clamp(13.5px,1.3vw,15px)", lineHeight: 1.45, color: "var(--muted)", fontWeight: 500 }}>
+                A good shawarma or a great bowl of ramen, always worth the detour.
+              </p>
+            </div>
+
+            {/* BeeLover */}
+            <div className="bento-tile" style={{ gridColumn: "4/5", gridRow: "2/3", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,32px)", display: "flex", flexDirection: "column", gap: 12 }}>
+              <span style={{ color: "var(--muted)" }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3c3 3.6 5 6.2 5 9a5 5 0 0 1-10 0c0-2.8 2-5.4 5-9z"/><path d="M9.5 13.5h5"/><path d="M9.8 16.2h4.4"/></svg>
+              </span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8, flexWrap: "wrap", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(18px,1.8vw,22px)", letterSpacing: "-.01em", marginTop: "auto" }}>
+                BeeLover{" "}
+                <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" as const, color: "var(--muted)", border: "1px solid var(--line)", borderRadius: 99, padding: "3px 8px" }}>Back in PH</span>
+              </span>
+              <p style={{ fontSize: "clamp(13.5px,1.3vw,15px)", lineHeight: 1.45, color: "var(--muted)", fontWeight: 500 }}>
+                A honey side-venture my wife and I ran back home in the Philippines.
+              </p>
+            </div>
+
+            {/* Plants — full-width bottom */}
+            <div className="bento-tile" style={{ gridColumn: "1/5", gridRow: "3/4", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,36px)", display: "flex", alignItems: "center", gap: "clamp(18px,2.4vw,30px)" }}>
+              <span style={{ display: "inline-flex", width: 50, height: 50, flex: "none", alignItems: "center", justifyContent: "center", borderRadius: "50%", background: "color-mix(in srgb,var(--muted) 12%,transparent)", color: "var(--muted)" }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13c0-4 3-7 8-7 0 4-3 7-8 7z"/><path d="M12 15c0-3-2.5-5.5-7-5.5 0 3 2.5 5.5 7 5.5z"/></svg>
+              </span>
+              <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 10, flexWrap: "wrap", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(18px,1.9vw,24px)", letterSpacing: "-.01em" }}>
+                  Selling plants{" "}
+                  <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase" as const, color: "var(--muted)", border: "1px solid var(--line)", borderRadius: 99, padding: "3px 9px" }}>Back in PH</span>
+                </span>
+                <p style={{ fontSize: "clamp(14px,1.4vw,15.5px)", lineHeight: 1.5, color: "var(--muted)", fontWeight: 500, maxWidth: "62ch" }}>
+                  Repotting and reselling them on the side, back in the Philippines — my first real instinct to grow something from scratch and ship it. One of those sleepless-night experiments worth every minute.
+                </p>
               </div>
             </div>
           </div>

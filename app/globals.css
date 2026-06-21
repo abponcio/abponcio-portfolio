@@ -391,6 +391,26 @@ h1, h2, h3 {
   background: var(--card);
 }
 
+/* ─── Ghost CTA (used in Work, About, Stack sections) ──────── */
+.cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.cta-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ─── Contact CTAs ────────────────────────────────────────── */
 .contact-cta-primary {
   display: inline-flex;
@@ -428,6 +448,19 @@ h1, h2, h3 {
 .contact-cta-secondary:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* ─── Bento grid — mobile ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+  }
+  .bento-tile {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    min-height: 150px !important;
+  }
 }
 
 /* ─── Hero portrait — desktop ──────────────────────────────── */
