@@ -139,16 +139,10 @@ h1, h2, h3 {
   .floatnav[data-open="true"] .fn-links::-webkit-scrollbar {
     display: none;
   }
-  /* Work rows: hide result, keep num · title · arrow */
-  .work-row { grid-template-columns: auto 1fr auto !important; gap: 14px !important; }
-  .work-result { display: none !important; }
-
   /* Modal: full-bleed sheet from bottom */
   .modal-outer { padding: 0 !important; align-items: flex-end !important; }
   .modal-inner { border-radius: 18px 18px 0 0 !important; max-height: 90vh !important; overflow-y: auto !important; }
   .modal-impact { grid-template-columns: 1fr !important; }
-  .modal-impact > div { flex-direction: row !important; align-items: baseline !important; justify-content: space-between !important; gap: 16px !important; padding: 16px clamp(18px,5vw,22px) !important; }
-  .modal-impact > div > span:last-child { text-align: right !important; }
 
   /* gradient fade between links and hamburger */
   .floatnav[data-open="true"] .floatnav-pill::after {
@@ -230,7 +224,7 @@ h1, h2, h3 {
 }
 
 /* ─── Work rows ─────────────────────────────────────────────── */
-.work-row {
+.work-item {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
@@ -245,7 +239,7 @@ h1, h2, h3 {
     background 0.4s ease;
 }
 
-.work-row:hover {
+.work-item:hover {
   padding-left: clamp(20px, 3vw, 44px);
   background: var(--card);
 }
@@ -254,7 +248,7 @@ h1, h2, h3 {
   transition: transform 0.4s var(--ease-spring);
 }
 
-.work-row:hover .work-item-arrow {
+.work-item:hover .work-item-arrow {
   transform: translateX(6px);
 }
 
@@ -306,6 +300,37 @@ h1, h2, h3 {
     grid-template-columns: 1fr !important;
   }
 
+  .work-item {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 6px 12px;
+    align-items: center;
+  }
+
+  .work-item-num {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .work-item-title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .work-item-result {
+    grid-column: 1;
+    grid-row: 3;
+    text-align: left !important;
+    max-width: none !important;
+    font-size: clamp(12px, 3.2vw, 14px) !important;
+  }
+
+  .work-item-arrow {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+  }
 }
 
 /* ─── Testimonials grid ───────────────────────────────────── */

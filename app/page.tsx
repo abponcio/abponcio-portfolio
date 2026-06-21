@@ -65,7 +65,7 @@ export default function Home() {
       });
 
       const sections = [
-        { trigger: ".work-section", sel: ".work-row", y: 20 },
+        { trigger: ".work-section", sel: ".work-item", y: 20 },
         { trigger: ".philosophy-section", sel: ".philosophy-item", x: -12, start: "top 80%" },
         { trigger: ".about-section", sel: ".timeline-item", y: 16, start: "top 80%" },
         { trigger: ".beyond-section", sel: ".life-card", y: 12 },
@@ -269,7 +269,7 @@ export default function Home() {
               <button
                 key={item.slug}
                 onClick={() => setOpenWork(i)}
-                className="work-row w-full text-left font-[inherit]"
+                className="work-item w-full text-left font-[inherit]"
                 style={{ background: "transparent", cursor: "pointer", color: "var(--text)" }}
               >
                 <span
@@ -292,7 +292,7 @@ export default function Home() {
                   {item.title}
                 </span>
                 <span
-                  className="work-result text-right max-w-[24ch]"
+                  className="work-item-result text-right max-w-[24ch]"
                   style={{
                     fontSize: "clamp(13px, 1.4vw, 17px)",
                     fontWeight: 600,
