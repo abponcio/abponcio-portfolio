@@ -9,8 +9,8 @@ export const siteCopy = {
     taglineAccent: "grow.",
   },
   work: {
-    eyebrow: "Select Projects",
-    subtitle: "Building at scale · since 2021",
+    eyebrow: "Selected Work",
+    subtitle: "All at Hello Chef · Dubai · since 2021",
   },
   philosophy: {
     headline: {

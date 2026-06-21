@@ -65,7 +65,7 @@ export default function Home() {
       });
 
       const sections = [
-        { trigger: ".work-section", sel: ".work-item", y: 20 },
+        { trigger: ".work-section", sel: ".work-row", y: 20 },
         { trigger: ".philosophy-section", sel: ".philosophy-item", x: -12, start: "top 80%" },
         { trigger: ".about-section", sel: ".timeline-item", y: 16, start: "top 80%" },
         { trigger: ".beyond-section", sel: ".life-card", y: 12 },
@@ -269,7 +269,7 @@ export default function Home() {
               <button
                 key={item.slug}
                 onClick={() => setOpenWork(i)}
-                className="work-item w-full text-left font-[inherit]"
+                className="work-row w-full text-left font-[inherit]"
                 style={{ background: "transparent", cursor: "pointer", color: "var(--text)" }}
               >
                 <span
@@ -292,7 +292,7 @@ export default function Home() {
                   {item.title}
                 </span>
                 <span
-                  className="work-item-result text-right max-w-[24ch]"
+                  className="work-result text-right max-w-[24ch]"
                   style={{
                     fontSize: "clamp(13px, 1.4vw, 17px)",
                     fontWeight: 600,
@@ -718,6 +718,7 @@ export default function Home() {
       {/* ── Case Study Modal ───────────────────────────────── */}
       {active && (
         <div
+          className="modal-outer"
           onClick={closeWork}
           style={{
             position: "fixed", inset: 0, zIndex: 100,
@@ -731,6 +732,7 @@ export default function Home() {
           }}
         >
           <div
+            className="modal-inner"
             onClick={(e) => e.stopPropagation()}
             style={{
               position: "relative", width: "100%", maxWidth: 860,
@@ -754,6 +756,15 @@ export default function Home() {
             >
               ✕
             </button>
+
+            {/* Company badge */}
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 14 }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 7, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: ".02em", color: "var(--accent)", background: "color-mix(in srgb,var(--accent) 14%,transparent)", borderRadius: 99, padding: "5px 12px" }}>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", display: "inline-block" }} />
+                Hello Chef
+              </span>
+              <span style={{ fontSize: "12.5px", color: "var(--muted)", fontWeight: 500 }}>Dubai, UAE</span>
+            </div>
 
             <span
               className="inline-flex items-center gap-2.5 font-display font-bold uppercase text-muted"
@@ -784,6 +795,7 @@ export default function Home() {
 
             {/* Impact stats */}
             <div
+              className="modal-impact"
               style={{
                 display: "grid", gridTemplateColumns: "repeat(3, 1fr)",
                 gap: 1, background: "var(--line)",
