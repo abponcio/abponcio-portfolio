@@ -143,6 +143,7 @@ export const builds = [
   "DBT Models",
   "ML Training",
   "DevOps & IaC",
+  "AI Workflows",
 ];
 
 export const stack = [
