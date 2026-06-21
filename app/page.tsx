@@ -600,7 +600,16 @@ export default function Home() {
             {/* Tennis — wide top-right */}
             <div className="bento-tile" style={{ gridColumn: "3/5", gridRow: "1/2", background: "var(--bg)", border: "1px solid var(--line)", borderRadius: "clamp(18px,1.8vw,26px)", padding: "clamp(24px,2.6vw,34px)", display: "flex", alignItems: "flex-start", gap: 18 }}>
               <span style={{ color: "var(--accent)", flex: "none", marginTop: 2 }}>
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6"/><line x1="9.5" y1="3.5" x2="9.5" y2="15.5"/><line x1="3.5" y1="9.5" x2="15.5" y2="9.5"/><line x1="5.4" y1="5.4" x2="13.6" y2="13.6"/><line x1="13.6" y1="5.4" x2="5.4" y2="13.6"/><line x1="14" y1="14" x2="21" y2="21"/></svg>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <ellipse cx="12" cy="8" rx="5" ry="6" />
+                  <line x1="9.5" y1="3" x2="9.5" y2="13" />
+                  <line x1="12" y1="2.5" x2="12" y2="13.5" />
+                  <line x1="14.5" y1="3" x2="14.5" y2="13" />
+                  <line x1="7.5" y1="5.5" x2="16.5" y2="5.5" />
+                  <line x1="7" y1="8" x2="17" y2="8" />
+                  <line x1="7.5" y1="10.5" x2="16.5" y2="10.5" />
+                  <line x1="12" y1="14" x2="12" y2="21.5" />
+                </svg>
               </span>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(19px,1.9vw,24px)", letterSpacing: "-.01em" }}>Tennis</span>
